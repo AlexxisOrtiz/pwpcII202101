@@ -1,15 +1,19 @@
-var express = require('express');
-var router = express.Router();
+// Importando el router de Home
+import homeRouter from './home';
+// Importando router de users
+import userRouter from './user';
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express', author: 'Steve Jobs', appName: 'WebApp' });
-});
+// router.use('/', homeRouter);
+// router.use('/', userRouter);
 
+const addRoutes = (app) => {
+  app.use('/', homeRouter);
+  app.use('/user', userRouter);
 
-/*Agregando nueva ruta*/
-router.get('/greeting', function (req, res, next) {
-  res.status(200).json({ message: 'Hola Alcones Peregrinos de ITGAM' })
-})
+  return app;
+};
 
-module.exports = router;
+export default {
+  addRoutes,
+};
