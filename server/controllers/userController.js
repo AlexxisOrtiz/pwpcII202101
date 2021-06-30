@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 const index = (req, res) => {
-  res.send('respond with a resource');
+  res.send('Indexado de usuarios ... Under Contruction');
 };
 
 export default {

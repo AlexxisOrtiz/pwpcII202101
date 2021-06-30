@@ -21,6 +21,8 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackDevConfig from '../webpack.dev.config';
 
+const env = process.env.NODE_ENV || 'development';
+
 // Consultar la aplicación express
 const app = express();
 

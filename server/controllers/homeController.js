@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 const index = (req, res) => {
-  res.render('index', {
+  res.render('home/index', {
     title: 'ProjNotes',
 });
 };
@@ -11,7 +11,12 @@ const greeting = (req, res) => {
     });
 };
 
+const about = (req, res) => {
+  res.render('home/about', { appVersion: '0.0.1' });
+};
+
 export default {
   index,
   greeting,
+  about,
 };
